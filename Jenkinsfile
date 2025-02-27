@@ -3,18 +3,18 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/Hiiampriyam/devops-app.git'
+                git 'https://github.com/your-username/devops-app.git'
             }
         }
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t priyamarora/devops-app .'
+                sh 'docker build -t your-dockerhub-username/devops-app .'
             }
         }
         stage('Push Image to Docker Hub') {
             steps {
-                withDockerRegistry([credentialsId: 'docker-hub-credentials', url: 'https://hub.docker.com/repository/docker/priyamarora/devops-app/general']) {
-                    sh 'docker push priyamarora/devops-app'
+                withDockerRegistry([credentialsId: 'docker-hub-credentials', url: '']) {
+                    sh 'docker push your-dockerhub-username/devops-app'
                 }
             }
         }
