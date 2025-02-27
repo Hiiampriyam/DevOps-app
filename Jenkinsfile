@@ -14,7 +14,7 @@ pipeline {
         stage('Push Image to Docker Hub') {
             steps {
                 withDockerRegistry([credentialsId: 'docker-hub-credentials', url: '']) {
-                    sh 'docker push your-dockerhub-username/devops-app'
+                    sh 'docker push priyamarora/devops-app'
                 }
             }
         }
